@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conversor de Moedas</title>
+<style>
+       body {
+           font-family: Arial, sans-serif;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           height: 100vh;
+           margin: 0;
+           background-color: #f4f4f4;
+       }
+       .converter {
+           background-color: #fff;
+           padding: 20px;
+           border-radius: 10px;
+           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+           max-width: 400px;
+           width: 100%;
+       }
+       .converter h2 {
+           margin-bottom: 20px;
+       }
+       .converter input, .converter select, .converter button {
+           width: 100%;
+           padding: 10px;
+           margin: 10px 0;
+       }
+       #conversao {
+           margin-top: 20px;
+           font-size: 1.2em;
+       }
+</style>
+</head>
+<body>
+<div class="converter">
+<h2>Conversor de Moedas</h2>
+<form id="currencyForm" method="POST" action="/converter">
+<input type="number" name="amount" id="amount" placeholder="Digite o valor" required>
+<select name="daMoeda" id="daMoeda" required>
+<option value="USD">Dólar</option>
+<option value="EUR">Euro</option>
+<option value="BRL">Real</option>
+</select>
+<select name="paraMoeda" id="paraMoeda" required>
+<option value="BRL">Real</option>
+<option value="USD">Dólar</option>
+<option value="EUR">Euro</option>
+</select>
+<button type="submit">Converter</button>
+<button type="reset">Limpar</button>
+</form>
+<div id="conversao"></div>
+</div>
+</body>
+</html>
